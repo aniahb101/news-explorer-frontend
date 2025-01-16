@@ -1,4 +1,5 @@
-news-explorer-frontend
+# news-explorer-frontend
+
 News Explorer is a full-stack React application that allows users to search for and save articles using the News API.
 
 Features

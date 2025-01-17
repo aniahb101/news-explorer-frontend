@@ -1,6 +1,8 @@
 import "./vendor/normalize.css";
 import "./App.css";
 import Header from "./components/Header/Header";
+import AboutSection from "./components/AboutSection/AboutSection";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const handleSearch = (keyword) => {
@@ -11,6 +13,10 @@ function App() {
   return (
     <div>
       <Header onSearch={handleSearch} />
+      <main>
+        <AboutSection />
+      </main>
+      <Footer />
     </div>
   );
 }

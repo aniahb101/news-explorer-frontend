@@ -18,3 +18,17 @@
   font-family: "Roboto-slab";
   src: url("../vendor/Fonts/roboto-700.woff2") format("woff2");
 }
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "inter";
+  src: url("../vendor/Fonts/inter-400-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto-slab";
+  src: url("../vendor/Fonts/roboto-900.woff2") format("woff2");
+}

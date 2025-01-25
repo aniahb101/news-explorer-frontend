@@ -45,3 +45,44 @@
 .footer__icon:hover {
   filter: brightness(0.8);
 }
+
+/* Media queries for mobile and tablet screens */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack the footer items vertically */
+    padding: 1rem 3rem; /* Adjust padding for smaller screens */
+  }
+
+  .footer__links {
+    flex-direction: column; /* Stack the link icons vertically */
+    gap: 1rem;
+  }
+
+  .footer__link {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .footer__icon {
+    width: 1.2rem; /* Smaller icons on mobile */
+    height: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 2rem; /* Further reduce padding for very small screens */
+  }
+
+  .footer__text {
+    font-size: 12px; /* Smaller footer text */
+  }
+
+  .footer__link {
+    font-size: 10px; /* Smaller font for very small screens */
+  }
+
+  .footer__icon {
+    width: 1rem; /* Further reduce icon size */
+    height: 1rem;
+  }
+}

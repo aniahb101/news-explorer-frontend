@@ -1,13 +1,14 @@
+import React from "react";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 import "./Header.css";
 
-function Header({ onSearch }) {
+function Header({ onSearch, onSignInClick }) {
   return (
     <header className="header">
       <div className="header__container">
         <h1 className="header__logo">NewsExplorer</h1>
-        <Navigation />
+        <Navigation onSignInClick={onSignInClick} />{" "}
       </div>
       <div className="header__content">
         <h2 className="header__title">

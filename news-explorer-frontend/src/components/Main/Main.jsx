@@ -1,37 +1,41 @@
-import { useState, useEffect } from "react";
-import NewsCardList from "../../components/NewsCardList/NewsCardList";
+import { useState } from "react";
 import "./Main.css";
+import SearchForm from "../SearchForm/SearchForm";
+import NewsCardList from "../../components/NewsCardList/NewsCardList";
+import { fetchNewsArticles } from "../../utils/newsAPI";
+import Preloader from "../Preloader/Preloader";
 
-function Main() {
+function Main({ onBookmarkToggle }) {
   const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const API_KEY = "089f7002af7c42b4b6e816bf2a582530";
-  const API_URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+  const handleSearch = async (keyword) => {
+    setIsLoading(true);
+    setError("");
+    setArticles([]);
 
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        setArticles(data.articles || []);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Failed to fetch articles:", error);
-        setIsLoading(false);
+    try {
+      const fetchedArticles = await fetchNewsArticles(keyword);
+      if (fetchedArticles.length === 0) {
+        setError("No results found.");
+      } else {
+        setArticles(fetchedArticles);
       }
-    };
-
-    fetchArticles();
-  }, []);
+    } catch (err) {
+      setError("Failed to fetch articles. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <main className="main">
-      <h1 className="main__title">Search results</h1>
-      {isLoading ? (
-        <p className="main__loading">Loading...</p>
-      ) : (
-        <NewsCardList articles={articles} />
+      <SearchForm onSearch={handleSearch} />
+      {isLoading && <Preloader />}
+      {error && <p className="main__error">{error}</p>}
+      {!isLoading && !error && articles.length > 0 && (
+        <NewsCardList articles={articles} onBookmarkToggle={onBookmarkToggle} />
       )}
     </main>
   );

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./vendor/normalize.css";
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -7,91 +8,82 @@ import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
 import LoginModal from "./components/LoginModal/LoginModal";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
+import { getSavedArticles, saveArticle } from "./utils/api";
 
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [savedArticles, setSavedArticles] = useState([]);
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    console.log("Logged In");
-    setIsLoginOpen(false);
-  };
+  useEffect(() => {
+    getSavedArticles().then((articles) => setSavedArticles(articles));
+  }, []);
 
-  const handleRegisterSubmit = (e) => {
-    e.preventDefault();
-    console.log("Registered");
-    setIsRegisterOpen(false);
-  };
-
-  const switchToRegisterModal = () => {
-    console.log("Switching to Register Modal");
-    console.log(
-      "Before: isLoginOpen:",
-      isLoginOpen,
-      "isRegisterOpen:",
-      isRegisterOpen
-    );
-    setIsLoginOpen(false);
-    setIsRegisterOpen(true);
-    console.log(
-      "After: isLoginOpen:",
-      isLoginOpen,
-      "isRegisterOpen:",
-      isRegisterOpen
-    );
-  };
-
-  const switchToLoginModal = () => {
-    console.log("Switching to Login Modal");
-    console.log(
-      "Before: isLoginOpen:",
-      isLoginOpen,
-      "isRegisterOpen:",
-      isRegisterOpen
-    );
-    setIsRegisterOpen(false);
-    setIsLoginOpen(true);
-    console.log(
-      "After: isLoginOpen:",
-      isLoginOpen,
-      "isRegisterOpen:",
-      isRegisterOpen
-    );
+  const handleBookmarkToggle = (article) => {
+    saveArticle(article).then((savedArticle) => {
+      setSavedArticles((prevArticles) => {
+        const alreadyBookmarked = prevArticles.some(
+          (a) => a.title === savedArticle.title
+        );
+        return alreadyBookmarked
+          ? prevArticles.filter((a) => a.title !== savedArticle.title)
+          : [...prevArticles, savedArticle];
+      });
+    });
   };
 
   return (
-    <div>
-      <Header
-        onSignInClick={() => {
-          console.log("Sign In button clicked");
-          setIsLoginOpen(true);
-        }}
-      />
-      <main>
-        <Main />
-        <AboutSection />
-      </main>
-      <Footer />
-      <LoginModal
-        isOpen={isLoginOpen}
-        onClose={() => {
-          console.log("Closing Login Modal");
-          setIsLoginOpen(false);
-        }}
-        onSubmit={handleLoginSubmit}
-        onSignUpClick={switchToRegisterModal}
-      />
-      <RegisterModal
-        isOpen={isRegisterOpen}
-        onClose={() => {
-          console.log("Closing Register Modal");
-          setIsRegisterOpen(false);
-        }}
-        onSubmit={handleRegisterSubmit}
-        onSignInClick={switchToLoginModal}
-      />
-    </div>
+    <Router>
+      <div className="app">
+        <LoginModal
+          isOpen={isLoginOpen}
+          onClose={() => setIsLoginOpen(false)}
+          onSubmit={() => setIsLoginOpen(false)}
+          onSignUpClick={() => {
+            setIsLoginOpen(false);
+            setIsRegisterOpen(true);
+          }}
+        />
+        <RegisterModal
+          isOpen={isRegisterOpen}
+          onClose={() => setIsRegisterOpen(false)}
+          onSubmit={() => setIsRegisterOpen(false)}
+          onSignInClick={() => {
+            setIsRegisterOpen(false);
+            setIsLoginOpen(true);
+          }}
+        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header onSignInClick={() => setIsLoginOpen(true)} />
+                <main>
+                  <Main onBookmarkToggle={handleBookmarkToggle} />
+                  <AboutSection />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/saved-articles"
+            element={
+              <>
+                <ProfilePage
+                  savedArticles={savedArticles}
+                  profileName="Aniah Brown"
+                  onBookmarkToggle={handleBookmarkToggle}
+                />
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

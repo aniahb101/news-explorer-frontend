@@ -44,7 +44,7 @@
 
 @media (max-width: 768px) {
   .about__container {
-    padding: 1rem; /* Reduce padding on smaller screens */
+    padding: 1rem;
     display: flex;
     flex-direction: column;
   }
@@ -61,24 +61,24 @@
   }
 
   .about__title {
-    font-size: 28px; /* Smaller font size on mobile */
+    font-size: 28px;
   }
 
   .about__subtitle {
-    font-size: 14px; /* Smaller font size for mobile */
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
   .about__container {
-    padding: 1rem; /* Adjust padding for very small screens */
+    padding: 1rem;
   }
 
   .about__title {
-    font-size: 24px; /* Further reduce title size on small screens */
+    font-size: 24px;
   }
 
   .about__subtitle {
-    font-size: 12px; /* Further reduce subtitle font size */
+    font-size: 12px;
   }
 }

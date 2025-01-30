@@ -46,43 +46,42 @@
   filter: brightness(0.8);
 }
 
-/* Media queries for mobile and tablet screens */
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Stack the footer items vertically */
-    padding: 1rem 3rem; /* Adjust padding for smaller screens */
+    flex-direction: column;
+    padding: 1rem 3rem;
   }
 
   .footer__links {
-    flex-direction: column; /* Stack the link icons vertically */
+    flex-direction: column;
     gap: 1rem;
   }
 
   .footer__link {
-    font-size: 12px; /* Smaller font size for mobile */
+    font-size: 12px;
   }
 
   .footer__icon {
-    width: 1.2rem; /* Smaller icons on mobile */
+    width: 1.2rem;
     height: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 1rem 2rem; /* Further reduce padding for very small screens */
+    padding: 1rem 2rem;
   }
 
   .footer__text {
-    font-size: 12px; /* Smaller footer text */
+    font-size: 12px;
   }
 
   .footer__link {
-    font-size: 10px; /* Smaller font for very small screens */
+    font-size: 10px;
   }
 
   .footer__icon {
-    width: 1rem; /* Further reduce icon size */
+    width: 1rem;
     height: 1rem;
   }
 }

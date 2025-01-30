@@ -64,3 +64,41 @@
 .news-card__bookmark:hover {
   background-color: rgba(200, 200, 200, 0.8);
 }
+
+.news-card__bookmark-container {
+  position: relative;
+  width: 182px;
+  height: 40px;
+  display: inline-block;
+}
+
+.news-card__bookmark--inactive {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.news-card__tooltip {
+  position: absolute;
+  top: 10px;
+  right: 65px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.5rem;
+  font-size: 14px;
+  border-radius: 8px;
+  width: 182px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.news-card__bookmark:hover + .news-card__tooltip {
+  visibility: visible;
+  opacity: 1;
+}

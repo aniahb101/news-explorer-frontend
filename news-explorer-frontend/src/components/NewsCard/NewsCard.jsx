@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./NewsCard.css";
 
-function NewsCard({ article }) {
+function NewsCard({ article, onBookmarkToggle, isUserLoggedIn }) {
   const { title, description, urlToImage, source, publishedAt } = article;
   const [isBookmarked, setIsBookmarked] = useState(false);
 
+  useEffect(() => {
+    const savedArticles =
+      JSON.parse(localStorage.getItem("bookmarkedArticles")) || [];
+    setIsBookmarked(
+      savedArticles.some((savedArticle) => savedArticle.title === title)
+    );
+  }, [title]);
+
   const toggleBookmark = () => {
-    setIsBookmarked((prevState) => !prevState);
+    if (isUserLoggedIn) {
+      setIsBookmarked((prev) => !prev);
+      onBookmarkToggle(article);
+    }
   };
 
   const formattedDate = publishedAt
@@ -28,10 +39,13 @@ function NewsCard({ article }) {
         <button
           className={`news-card__bookmark ${
             isBookmarked ? "news-card__bookmark--active" : ""
-          }`}
+          } ${!isUserLoggedIn ? "news-card__bookmark--inactive" : ""}`}
           onClick={toggleBookmark}
           aria-label="Bookmark this article"
         />
+        {!isUserLoggedIn && (
+          <div className="news-card__tooltip">Sign in to save articles</div>
+        )}
       </div>
       <div className="news-card__content">
         <p className="news-card__date">{formattedDate}</p>

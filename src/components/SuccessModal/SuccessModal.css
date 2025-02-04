@@ -1,0 +1,37 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 1000;
+}
+
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.success-modal__title {
+  font-family: "Roboto-slab", Courier, monospace;
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0;
+}
+
+.success-modal__signin-button {
+  background-color: #ffffff;
+  color: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 18px;
+  margin-top: 14px;
+}

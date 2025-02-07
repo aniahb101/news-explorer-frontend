@@ -2,7 +2,7 @@ import { useState } from "react";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import "./NewsCardList.css";
 
-function NewsCardList({ articles, onBookmarkToggle }) {
+function NewsCardList({ articles, onBookmarkToggle, showTrashIcon }) {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const handleShowMore = () => setVisibleCount((prevCount) => prevCount + 3);
@@ -15,6 +15,8 @@ function NewsCardList({ articles, onBookmarkToggle }) {
             key={index}
             article={article}
             onBookmarkToggle={onBookmarkToggle}
+            showTrashIcon={showTrashIcon}
+            isUserLoggedIn={true}
           />
         ))}
       </div>

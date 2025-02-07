@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import "./NewsCard.css";
 
-function NewsCard({ article, onBookmarkToggle, isUserLoggedIn }) {
-  const { title, description, urlToImage, source, publishedAt } = article;
+function NewsCard({
+  article,
+  onBookmarkToggle,
+  showTrashIcon,
+  isUserLoggedIn,
+}) {
+  const { title, description, urlToImage, source, publishedAt, keyword } =
+    article;
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
@@ -13,8 +19,8 @@ function NewsCard({ article, onBookmarkToggle, isUserLoggedIn }) {
     );
   }, [title]);
 
-  const toggleBookmark = () => {
-    if (isUserLoggedIn) {
+  const handleClick = () => {
+    if (!showTrashIcon && isUserLoggedIn) {
       setIsBookmarked((prev) => !prev);
       onBookmarkToggle(article);
     }
@@ -37,21 +43,28 @@ function NewsCard({ article, onBookmarkToggle, isUserLoggedIn }) {
           className="news-card__image"
         />
         <button
-          className={`news-card__bookmark ${
-            isBookmarked ? "news-card__bookmark--active" : ""
-          } ${!isUserLoggedIn ? "news-card__bookmark--inactive" : ""}`}
-          onClick={toggleBookmark}
-          aria-label="Bookmark this article"
+          className={`news-card__icon ${
+            showTrashIcon ? "news-card__trash" : "news-card__bookmark"
+          }`}
+          onClick={handleClick}
+          aria-label={
+            showTrashIcon ? "Delete this article" : "Bookmark this article"
+          }
         />
-        {!isUserLoggedIn && (
+        {!isUserLoggedIn && !showTrashIcon && (
           <div className="news-card__tooltip">Sign in to save articles</div>
         )}
       </div>
       <div className="news-card__content">
+        {keyword && <div className="news-card__keyword">{keyword}</div>}
         <p className="news-card__date">{formattedDate}</p>
         <h2 className="news-card__title">{title}</h2>
         <p className="news-card__description">{description}</p>
-        <p className="news-card__source">{source?.name}</p>
+        <p className="news-card__source">
+          {typeof source === "object"
+            ? source.name
+            : source || "Unknown Source"}
+        </p>
       </div>
     </div>
   );

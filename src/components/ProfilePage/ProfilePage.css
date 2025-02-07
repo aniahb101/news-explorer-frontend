@@ -55,12 +55,33 @@
 
 .profile-main__title {
   font-size: 28px;
-  margin-bottom: 1.5rem;
-  color: #333;
+  font-family: "Roboto-slab", Courier, monospace;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(26, 27, 34, 0.5);
 }
 
 .profile-main__empty-message {
   font-size: 18px;
   color: #666;
   text-align: center;
+}
+.profile-main__summary {
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.profile-main__saved-count {
+  font-family: "Roboto-slab", Courier, monospace;
+  font-weight: 400;
+  font-size: 40px;
+  color: #333;
+  margin-top: 0;
+}
+
+.profile-main__keywords {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(182, 188, 191, 1);
 }

@@ -5,12 +5,6 @@ import "./ProfilePage.css";
 function ProfilePage({ savedArticles, profileName }) {
   const articleCount = savedArticles.length;
   const keywordList = ["Lace", "Embroidery", "Apple", "Lolita"];
-  const displayedKeywords =
-    keywordList.length > 3
-      ? `${keywordList.slice(0, 3).join(", ")}, and ${
-          keywordList.length - 3
-        } other`
-      : keywordList.join(", ");
 
   return (
     <div className="profile-page">
@@ -35,7 +29,17 @@ function ProfilePage({ savedArticles, profileName }) {
           </h1>
           {articleCount > 0 && (
             <h2 className="profile-main__keywords">
-              By keywords: {displayedKeywords}
+              By keywords:{" "}
+              {keywordList.slice(0, 3).map((keyword, index) => (
+                <span key={index} className="profile-main__keyword">
+                  {index > 0 ? `, ${keyword}` : keyword}
+                </span>
+              ))}
+              {keywordList.length > 3 && (
+                <span className="profile-main__other-keywords">
+                  , and {keywordList.length - 3} other
+                </span>
+              )}
             </h2>
           )}
         </div>

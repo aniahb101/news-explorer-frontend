@@ -16,7 +16,7 @@ function NewsCardList({ articles, onBookmarkToggle, showTrashIcon }) {
             article={article}
             onBookmarkToggle={onBookmarkToggle}
             showTrashIcon={showTrashIcon}
-            isUserLoggedIn={true}
+            isUserLoggedIn={false}
           />
         ))}
       </div>

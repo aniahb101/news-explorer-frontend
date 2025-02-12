@@ -19,6 +19,7 @@
   width: 464px;
   height: 464px;
   object-fit: cover;
+  border-radius: 1000px;
 }
 
 .about__content {
@@ -35,7 +36,7 @@
 
 .about__subtitle {
   font-size: 18px;
-  font-family: "Roboto-slab", Courier, monospace;
+  font-family: "Roboto", Courier, monospace;
   font-weight: 400;
   color: #666;
   line-height: 24px;

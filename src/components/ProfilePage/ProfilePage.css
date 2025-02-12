@@ -80,8 +80,20 @@
 }
 
 .profile-main__keywords {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", Courier, monospace;
   font-weight: 400;
   font-size: 18px;
   color: rgba(182, 188, 191, 1);
+}
+
+.profile-main__keywords .profile-main__keyword {
+  font-family: "Roboto", Courier, monospace;
+  font-weight: 700;
+  color: black;
+}
+
+.profile-main__other-keywords {
+  font-family: "Roboto", Courier, monospace;
+  font-weight: 700;
+  color: black;
 }

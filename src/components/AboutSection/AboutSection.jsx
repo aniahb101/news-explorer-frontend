@@ -1,5 +1,5 @@
 import "./AboutSection.css";
-import profileImage from "../../images/aboutsection.png";
+import profileImage from "../../images/me.jpg";
 
 function AboutSection() {
   return (

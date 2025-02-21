@@ -1,12 +1,11 @@
-// src/utils/auth.js
-export const authorize = (email, password) => {
+export const authorize = (_email, _password) => {
   return new Promise((resolve) => {
     console.log("Simulating backend login...");
     resolve({ token: "fake-jwt-token" });
   });
 };
 
-export const checkToken = (token) => {
+export const checkToken = (_token) => {
   return new Promise((resolve) => {
     console.log("Validating token...");
     resolve({

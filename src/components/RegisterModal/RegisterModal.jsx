@@ -1,4 +1,3 @@
-// src/components/RegisterModal/RegisterModal.jsx
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
@@ -11,8 +10,8 @@ function RegisterModal({ isOpen, onClose, onSignInClick, onRegisterSuccess }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Registered with:", { email, password, username });
-    onClose(); // Close register modal
-    onRegisterSuccess(); // Trigger success modal
+    onClose();
+    onRegisterSuccess();
   };
 
   return (

@@ -54,8 +54,6 @@ function LoginModal({ isOpen, onClose, onSubmit, onSignUpClick }) {
             </button>
           </div>
         </form>
-
-        <button className="login-modal__close" onClick={onClose}></button>
       </div>
     </ModalWithForm>
   );

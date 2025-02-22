@@ -43,7 +43,7 @@ function NewsCard({
           alt={title}
           className="news-card__image"
         />
-        {/* Tooltip wrapper */}
+        
         <div className="news-card__icon-container">
           <button
             className={`news-card__icon ${
@@ -54,13 +54,13 @@ function NewsCard({
               showTrashIcon ? "Remove this article" : "Bookmark this article"
             }
           />
-          {/* Trash Tooltip */}
+          
           {showTrashIcon && (
             <div className="news-card__tooltip news-card__tooltip--trash">
               Remove from saved
             </div>
           )}
-          {/* Bookmark Tooltip */}
+          
           {!isUserLoggedIn && !showTrashIcon && (
             <div className="news-card__tooltip">Sign in to save articles</div>
           )}

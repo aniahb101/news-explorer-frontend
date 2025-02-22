@@ -130,6 +130,15 @@
 }
 
 @media (max-width: 768px) {
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .header__subtitle {
+    padding-right: 8%;
+    line-height: 24px;
+  }
   .header__nav {
     display: none;
   }
@@ -144,5 +153,19 @@
 
   .header__close-button {
     display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__logo {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+    font-size: 10vw;
   }
 }

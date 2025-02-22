@@ -82,3 +82,9 @@
   border: none;
   background-color: white;
 }
+
+@media (max-width: 480px) {
+  .register-modal__button {
+    width: 90%;
+  }
+}

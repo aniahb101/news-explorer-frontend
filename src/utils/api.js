@@ -10,7 +10,7 @@ export const getSavedArticles = () => {
         url: "https://www.devilinspired.com/country/red-lace-up-detail-apple-embroidery-and-print-short-sleeves-top.html",
         urlToImage:
           "https://statics.devilinspired.com/image/cache/2024/0830/0/005f45ac-e710-9fce-1b16-850a7bfad6d0-750x1000.jpg.webp",
-        source: "Devil Inspired News",
+        source: "Lolita Berry News",
         publishedAt: "2023-09-20",
         keyword: "Lace",
       },
@@ -22,7 +22,7 @@ export const getSavedArticles = () => {
         url: "https://www.devilinspired.com/country/pink-apple-embroidery-neckline-tank-top.html",
         urlToImage:
           "https://statics.devilinspired.com/image/cache/2024/0830/0/b6fd7b57-d726-9781-ac21-ff1585c472dc-750x1000.jpg.webp",
-        source: "Devil Inspired Style",
+        source: "Lolita Berry Style",
         publishedAt: "2023-08-15",
         keyword: "Embroidery",
       },
@@ -34,7 +34,7 @@ export const getSavedArticles = () => {
         url: "https://www.devilinspired.com/country/red-lace-up-detail-apple-embroidery-and-print-short-sleeves-top.html",
         urlToImage:
           "https://statics.devilinspired.com/image/cache/2024/0830/0/aed468d2-fe35-4517-0d8d-720921d51d8c-750x1000.jpg.webp",
-        source: "Fashion Weekly",
+        source: "Lolita Weekly",
         publishedAt: "2023-07-30",
         keyword: "Apple",
       },

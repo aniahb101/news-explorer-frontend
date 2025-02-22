@@ -47,8 +47,13 @@
 
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column;
     padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .footer__text {
+    margin-top: 20px;
   }
 
   .footer__links {
@@ -73,6 +78,7 @@
 
   .footer__text {
     font-size: 12px;
+    margin-top: 20px;
   }
 
   .footer__link {

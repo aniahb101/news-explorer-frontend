@@ -65,12 +65,12 @@
 @media (max-width: 480px) {
   .search-form {
     width: 80%;
-    top: auto;
     bottom: 10%;
     transform: translateX(-50%);
     position: absolute;
     display: flex;
     flex-direction: column;
+    margin-top: 120px;
   }
 
   .search-form__input {
@@ -91,6 +91,7 @@
 @media (max-width: 320px) {
   .search-form {
     bottom: 5%;
+    margin-top: 120px;
   }
 
   .search-form__input {

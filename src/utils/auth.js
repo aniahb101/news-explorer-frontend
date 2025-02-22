@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 export const authorize = (_email, _password) => {
   return new Promise((resolve) => {
     console.log("Simulating backend login...");

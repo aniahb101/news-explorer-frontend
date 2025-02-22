@@ -127,3 +127,9 @@
   cursor: pointer;
   color: rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width: 480px) {
+  .login-modal__button {
+    width: 90%;
+  }
+}

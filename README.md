@@ -4,7 +4,7 @@ News Explorer is a Front-end React application that allows users to search for a
 
 ## Demo
 
-![News Explorer Demo](./src/images/NewsExplorer.gif)
+![News Explorer Demo](./src/images/news.gif)
 
 ## Features
 
@@ -23,4 +23,6 @@ News Explorer is a Front-end React application that allows users to search for a
 - **🌙 Dark Mode Compatibility (Future Feature):**  
   Future updates will introduce a **dark mode option**, allowing users to switch between light and dark themes for a **customized reading experience**.
 
-![News Explorer Demo](./src/images/NewsExplorer2.gif)
+![News Explorer Demo](./src/images/explorer.gif)
+
+link for saved articles:

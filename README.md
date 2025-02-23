@@ -25,4 +25,6 @@ News Explorer is a Front-end React application that allows users to search for a
 
 ![News Explorer Demo](./src/images/explorer.gif)
 
-link for saved articles:
+![News Explorer](https://aniahb101.github.io/news-explorer-frontend/)
+
+link to saved articles: https://aniahb101.github.io/news-explorer-frontend/saved-articles

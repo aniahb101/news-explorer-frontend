@@ -38,10 +38,12 @@ function ProfilePage({ savedArticles }) {
               Home
             </a>
 
-            <a href="/saved-articles" className="profile-header__link profile-header__saved">
-  Saved Articles
-</a>
-
+            <a
+              href="/saved-articles"
+              className="profile-header__link profile-header__saved"
+            >
+              Saved Articles
+            </a>
 
             <div className="profile-header__user" onClick={toggleMenu}>
               <span className="profile-header__name">Aniah</span>
@@ -56,7 +58,7 @@ function ProfilePage({ savedArticles }) {
 
         <div className="profile-main__summary">
           <h1 className="profile-main__saved-count">
-            Aniah, you have {articleCount} saved <br /> articles
+            Aniah, you have {articleCount} saved articles
           </h1>
           {articleCount > 0 && (
             <h2 className="profile-main__keywords">

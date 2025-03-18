@@ -1,6 +1,6 @@
 .not-found {
   text-align: center;
-  margin-top: 50px;
+  padding: 5rem 0rem;
 }
 
 .not-found__image {
@@ -15,7 +15,6 @@
   color: #333;
   margin: 20px 0 10px;
   font-family: "Roboto-slab", Courier, monospace;
-  font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.05em;
 }
@@ -23,7 +22,7 @@
 .not-found__description {
   font-size: 18px;
   color: rgba(182, 188, 191, 1);
-  font-family: "Roboto-slab", Courier, monospace;
+  font-family: "Roboto", Courier, monospace;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.05em;

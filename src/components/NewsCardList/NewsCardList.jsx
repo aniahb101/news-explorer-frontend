@@ -9,6 +9,8 @@ function NewsCardList({ articles, onBookmarkToggle, showTrashIcon }) {
 
   return (
     <div className="news-card-list-container">
+      <h2 className="news-card-list__header">Search Results</h2>
+
       <div className="news-card-list">
         {articles.slice(0, visibleCount).map((article, index) => (
           <NewsCard
@@ -20,6 +22,7 @@ function NewsCardList({ articles, onBookmarkToggle, showTrashIcon }) {
           />
         ))}
       </div>
+
       {visibleCount < articles.length && (
         <button className="news-card-list__button" onClick={handleShowMore}>
           Show More

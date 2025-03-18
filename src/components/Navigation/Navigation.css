@@ -65,3 +65,29 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 480px) {
+  .navigation__button {
+    width: 288px;
+    height: 56px;
+    margin-top: 40px;
+    width: 400px;
+  }
+
+  .navigation__link {
+    margin-right: 380px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navigation__button {
+    width: 288px;
+    height: 56px;
+    margin-top: 40px;
+    margin-left: 170px;
+  }
+
+  .navigation__link {
+    margin-left: 200px;
+  }
+}

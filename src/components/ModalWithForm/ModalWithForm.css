@@ -23,7 +23,6 @@
   background-color: #fff;
   position: relative;
   box-sizing: border-box;
-  max-width: 496px;
   width: 100%;
   padding: 2rem;
   border-radius: 20px;
@@ -31,7 +30,7 @@
   flex-direction: column;
   align-items: flex-start;
   width: 430px;
-  padding: 2.125rem 2.25rem 1.75rem 2.25rem;
+  padding: 34px 36px 28px 36px;
 }
 
 .modal__close-button {

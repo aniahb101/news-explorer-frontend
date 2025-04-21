@@ -54,10 +54,8 @@
   }
 
   .news-card-list > * {
-    width: 224px;
     height: 420px;
     flex: 1 1 calc(33.33% - 1.5rem);
-    max-width: 224px;
   }
 }
 
@@ -72,6 +70,7 @@
   .news-card-list__header {
     font-size: 30px;
     padding-left: 2rem;
+    margin-top: 40px;
   }
   .news-card-list-container {
     padding-top: 2rem;
@@ -86,13 +85,6 @@
     justify-content: center;
     gap: 1rem;
     padding: 30px;
-  }
-
-  .news-card-list > * {
-    width: 224px;
-    height: 420px;
-    flex: 1 1 calc(33.33% - 1rem);
-    max-width: 224px;
   }
 }
 

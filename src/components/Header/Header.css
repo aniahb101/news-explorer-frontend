@@ -13,7 +13,9 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1rem 6.5rem;
+  padding: 20px 104px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .header__logo {
@@ -25,7 +27,7 @@
 
 .header__content {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 80px 16px;
 }
 
 .header__title {
@@ -45,6 +47,7 @@
   font-weight: 400;
   font-size: 18px;
   padding-left: 3%;
+  margin-top: 0;
 }
 
 .header__nav {
@@ -65,18 +68,12 @@
 .header__nav-link::after {
   content: "";
   display: block;
-  width: 100%;
-  height: 2px;
+  width: 110%;
+  height: 3px;
   background-color: white;
   position: absolute;
-  bottom: -16px;
+  bottom: -30px;
   left: 0;
-}
-
-@media (max-width: 768px) {
-  .header__nav-link::after {
-    content: none;
-  }
 }
 
 .header__nav-button {
@@ -92,7 +89,6 @@
   border-radius: 100px;
   width: 176px;
   height: 48px;
-  line-height: 48px;
   background-color: transparent;
   margin-left: 40px;
 }
@@ -131,10 +127,6 @@
   height: auto;
 }
 
-.header__menu-icon {
-  display: none;
-}
-
 .header__nav {
   display: none;
 }
@@ -143,37 +135,42 @@
   .header {
     height: 400px;
   }
-
+  .header__content {
+    padding: 40px 16px;
+  }
   .header__container {
     padding: 1rem 2.5rem;
   }
   .header__title {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 36px;
+    line-height: 40px;
     display: flex;
-    justify-content: flex-start;
-    padding-left: 140px;
+    justify-content: center;
   }
-
   .header__subtitle {
-    padding-right: 8%;
-    line-height: 24px;
     margin-top: 0;
+    margin: 0 auto;
+    text-align: center;
   }
   .header__nav {
     display: none;
   }
-
   .header__menu-icon {
     display: block;
   }
-
   .header__nav--open {
     display: flex;
   }
-
   .header__close-button {
     display: block;
+  }
+  .header__nav-button {
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .header__nav-link {
+    font-size: 16px;
   }
 }
 
@@ -188,16 +185,12 @@
     z-index: 999;
     display: none;
   }
-
   .header__overlay.active {
     display: block;
   }
   .header {
-    color: #fff;
     height: 536px;
-    position: relative;
   }
-
   .header__nav--open {
     display: flex;
     align-items: center;
@@ -212,24 +205,20 @@
     z-index: 1000;
     padding-top: 30px;
   }
-
   .header__logo--menu {
     font-size: 20px;
     color: white;
     font-weight: bold;
-
     top: 20px;
     left: 20px;
-
-    border-bottom: solid 1px rgb(255 255 255 / 40%);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.4);
     width: 100%;
-    height: 100;
+    height: 100px;
     margin-bottom: 20px;
     padding-right: 30px;
     padding-left: 40px;
     padding-bottom: 20px;
   }
-
   .header__nav-link {
     color: white;
     font-size: 24px;
@@ -237,11 +226,9 @@
     margin-bottom: 20px;
     text-align: center;
   }
-
   .header__nav-link::after {
     content: none;
   }
-
   .header__nav-button {
     background: none;
     border: 2px solid white;
@@ -255,16 +242,13 @@
     height: 48px;
     transition: all 0.3s ease-in-out;
   }
-
   .header__container {
     padding-left: 20px;
   }
-
   .header__nav-button:hover {
     background: white;
     color: black;
   }
-
   .header__menu-icon {
     display: block;
     font-size: 24px;
@@ -275,7 +259,6 @@
     position: absolute;
     right: 20px;
   }
-
   .header__close-button {
     display: block;
     position: absolute;
@@ -288,14 +271,12 @@
     cursor: pointer;
     width: 20%;
   }
-
   .header__title {
     font-size: 36px;
     margin-bottom: 16px;
     line-height: 40px;
     padding-left: 0;
   }
-
   .header__subtitle {
     text-align: center;
     margin-top: 0;
@@ -303,13 +284,11 @@
     line-height: 28px;
     text-align: left;
   }
-
   .header__nav {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 0;
     transform: translateX(100%);
   }
-
   .header__nav--open {
     opacity: 1;
     transform: translateX(0);
@@ -317,13 +296,32 @@
 }
 
 @media (max-width: 380px) {
+  .header__logo {
+    font-size: 16px;
+  }
   .header__title {
     font-size: 30px;
     line-height: 40px;
     padding-left: 0;
   }
-
   .header__nav--open {
     width: 92%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .header__container {
+    padding: 20px 120px;
+    max-width: 1920px;
+  }
+
+  .header__nav-link {
+    font-size: 22px;
+    line-height: 56px;
+  }
+  .header__nav-button {
+    font-size: 22px;
+    width: 200px;
+    height: 56px;
   }
 }

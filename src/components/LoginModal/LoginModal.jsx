@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./LoginModal.css";
 
 function LoginModal({ isOpen, onClose, onSubmit, onSignUpClick }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (email && password) {
+      onSubmit({ email, password });
+    }
+  };
+
   return (
     <ModalWithForm
       isOpen={isOpen}
       onClose={onClose}
       title="Sign In"
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
     >
       <div className="login-modal__container">
-        <form className="login-modal__form" onSubmit={onSubmit}>
+        <form className="login-modal__form" onSubmit={handleSubmit}>
           <div className="login-modal__field">
             <label className="login-modal__label" htmlFor="email">
               Email
@@ -22,6 +36,8 @@ function LoginModal({ isOpen, onClose, onSubmit, onSignUpClick }) {
               className="login-modal__input"
               placeholder="Enter email"
               required
+              value={email}
+              onChange={handleEmailChange}
             />
           </div>
           <div className="login-modal__field">
@@ -34,11 +50,17 @@ function LoginModal({ isOpen, onClose, onSubmit, onSignUpClick }) {
               className="login-modal__input"
               placeholder="Enter password"
               required
+              value={password}
+              onChange={handlePasswordChange}
             />
           </div>
 
           <div className="login-modal__button-container">
-            <button type="submit" className="login-modal__button">
+            <button
+              type="submit"
+              className="login-modal__button"
+              disabled={!email || !password}
+            >
               Sign in
             </button>
           </div>

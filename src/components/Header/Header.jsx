@@ -21,9 +21,9 @@ function Header({ onSignInClick }) {
 
   const handleSignInClick = () => {
     if (isMobile) {
-      setIsMenuOpen(false); 
+      setIsMenuOpen(false);
     }
-    onSignInClick(); 
+    onSignInClick();
   };
 
   return (

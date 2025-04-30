@@ -1,3 +1,4 @@
+// Main.js
 import { useState } from "react";
 import "./Main.css";
 import SearchForm from "../SearchForm/SearchForm";
@@ -31,18 +32,21 @@ function Main({ onBookmarkToggle }) {
   };
 
   return (
-    <main className="main">
+    <div className="main">
       <SearchForm onSearch={handleSearch} />
+
       {isLoading && <Preloader />}
+
       {error === "no-results" ? (
         <NotFound />
       ) : (
         error && <p className="main__error">{error}</p>
       )}
+
       {!isLoading && !error && articles.length > 0 && (
         <NewsCardList articles={articles} onBookmarkToggle={onBookmarkToggle} />
       )}
-    </main>
+    </div>
   );
 }
 

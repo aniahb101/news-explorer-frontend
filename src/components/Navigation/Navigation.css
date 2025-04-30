@@ -66,7 +66,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 470px) {
   .navigation__button {
     width: 288px;
     height: 56px;

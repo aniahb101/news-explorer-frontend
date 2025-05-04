@@ -39,7 +39,7 @@
 }
 
 .news-card-list__button:hover {
-  background-color: #0056b3;
+  background-color: #d4d2d2;
 }
 
 @media (max-width: 1024px), (max-width: 768px) {

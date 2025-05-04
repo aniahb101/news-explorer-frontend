@@ -9,9 +9,11 @@ function RegisterModal({ isOpen, onClose, onSignInClick, onRegisterSuccess }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Registered with:", { email, password, username });
-    onClose();
-    onRegisterSuccess();
+    if (email && password && username) {
+      console.log("Registered with:", { email, password, username });
+      onClose();
+      onRegisterSuccess();
+    }
   };
 
   return (
@@ -35,6 +37,7 @@ function RegisterModal({ isOpen, onClose, onSignInClick, onRegisterSuccess }) {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
+
       <div className="register-modal__field">
         <label htmlFor="password" className="register-modal__label">
           Password
@@ -49,6 +52,7 @@ function RegisterModal({ isOpen, onClose, onSignInClick, onRegisterSuccess }) {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
+
       <div className="register-modal__field">
         <label htmlFor="username" className="register-modal__label">
           Username
@@ -65,7 +69,11 @@ function RegisterModal({ isOpen, onClose, onSignInClick, onRegisterSuccess }) {
       </div>
 
       <div className="register-modal__button-container">
-        <button type="submit" className="register-modal__button">
+        <button
+          type="submit"
+          className="register-modal__button"
+          disabled={!email || !password || !username}
+        >
           Sign up
         </button>
 

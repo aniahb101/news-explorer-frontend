@@ -1,10 +1,10 @@
 .navigation__list {
   list-style: none;
   display: flex;
-  gap: 1rem;
   margin: 0;
   padding: 0;
   justify-content: center;
+  gap: 40px;
 }
 
 .navigation__link {
@@ -13,7 +13,6 @@
   font-family: "Roboto-slab", Courier, monospace;
   font-weight: 500;
   font-size: 18px;
-  line-height: 48px;
 }
 
 .navigation__button {
@@ -35,6 +34,7 @@
 
 .navigation__item {
   position: relative;
+  margin-top: -10px;
 }
 
 .navigation__link::after {
@@ -44,7 +44,7 @@
   height: 2px;
   background-color: white;
   position: absolute;
-  bottom: -16px;
+
   left: 0;
 }
 
@@ -68,9 +68,7 @@
 
 @media (max-width: 470px) {
   .navigation__button {
-    width: 288px;
     height: 56px;
-    margin-top: 40px;
     width: 400px;
   }
 
@@ -83,11 +81,10 @@
   .navigation__button {
     width: 288px;
     height: 56px;
-    margin-top: 40px;
-    margin-left: 170px;
+    margin-left: 120px;
   }
 
   .navigation__link {
-    margin-left: 200px;
+    margin-left: 120px;
   }
 }

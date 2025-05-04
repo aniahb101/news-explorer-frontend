@@ -22,6 +22,11 @@
   box-sizing: border-box;
 }
 
+.search-form__input::placeholder {
+  color: #b6bcbf;
+  opacity: 1;
+}
+
 .search-form__button {
   width: 168px;
   height: 64px;

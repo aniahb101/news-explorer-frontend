@@ -116,7 +116,7 @@
     padding: 1.25rem;
     border-radius: 12px;
     place-self: end;
-    height: calc(100vh - 56px);
+    height: calc(100vh - 5px);
   }
 
   .modal__title {
@@ -145,6 +145,16 @@
     opacity: 1;
     visibility: visible;
   }
+
+  .modal_opened ~ .header .header__menu-icon {
+    display: none !important;
+  }
+
+  .modal_opened ~ .header .header__logo {
+    color: #fff !important;
+    opacity: 1 !important;
+    z-index: 1000;
+  }
 }
 
 @media (max-width: 320px) {
@@ -167,9 +177,8 @@
   }
 
   .modal__close-button {
-    top: -20px;
-    right: -20px;
     width: 20px;
     height: 20px;
+    top: -45px;
   }
 }

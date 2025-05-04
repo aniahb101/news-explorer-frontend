@@ -130,8 +130,11 @@
 }
 
 .login-modal__button:disabled {
-  opacity: 0.5;
+  background-color: #d1d2d6;
+  color: white;
+  opacity: 1;
   cursor: not-allowed;
+  border-color: #d1d2d6;
 }
 
 @media (max-width: 480px) {

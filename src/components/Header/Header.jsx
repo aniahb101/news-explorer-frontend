@@ -48,7 +48,7 @@ function Header({ onSignInClick }) {
             onClick={toggleMenu}
             aria-label="Open menu"
           >
-            ≡
+            =
           </button>
         )}
 
@@ -82,8 +82,11 @@ function Header({ onSignInClick }) {
           What's going on in <br /> the world?
         </h2>
         <p className="header__subtitle">
-          Find the latest news on any topic and save them in your personal
-          account.
+          Find the latest news on any topic and save them in your
+          <span className="header__subtitle--mobile-break">
+            {" "}
+            personal account.
+          </span>
         </p>
       </div>
     </header>

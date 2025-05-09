@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../Navigation/Navigation";
+import SearchForm from "../SearchForm/SearchForm";
 import "./Header.css";
 
-function Header({ onSignInClick }) {
+function Header({ onSignInClick, onSearch }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
 
@@ -76,7 +77,7 @@ function Header({ onSignInClick }) {
             <Navigation onSignInClick={handleSignInClick} />
           </nav>
         )}
-      </div>{" "}
+      </div>
       <div className="header__content">
         <h2 className="header__title">
           What's going on in <br /> the world?
@@ -88,6 +89,8 @@ function Header({ onSignInClick }) {
             personal account.
           </span>
         </p>
+
+        <SearchForm onSearch={onSearch} />
       </div>
     </header>
   );

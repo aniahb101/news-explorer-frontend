@@ -2,14 +2,20 @@ import { useState } from "react";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import "./NewsCardList.css";
 
-function NewsCardList({ articles, onBookmarkToggle, showTrashIcon }) {
+function NewsCardList({
+  articles,
+  onBookmarkToggle,
+  showTrashIcon,
+  isUserLoggedIn = false,
+  hideTitle = false,
+}) {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const handleShowMore = () => setVisibleCount((prevCount) => prevCount + 3);
 
   return (
     <div className="news-card-list-container">
-      <h2 className="news-card-list__header">Search Results</h2>
+      {!hideTitle && <h2 className="news-card-list__header">Search Results</h2>}
 
       <div className="news-card-list">
         {articles.slice(0, visibleCount).map((article, index) => (
@@ -18,7 +24,7 @@ function NewsCardList({ articles, onBookmarkToggle, showTrashIcon }) {
             article={article}
             onBookmarkToggle={onBookmarkToggle}
             showTrashIcon={showTrashIcon}
-            isUserLoggedIn={false}
+            isUserLoggedIn={isUserLoggedIn}
           />
         ))}
       </div>

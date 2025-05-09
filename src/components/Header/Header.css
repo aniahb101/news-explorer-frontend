@@ -23,11 +23,17 @@
   font-family: "Roboto-slab", Courier, monospace;
   font-weight: 700;
   font-size: 20px;
+  line-height: 24px;
 }
 
 .header__content {
   text-align: center;
   padding: 80px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .header__title {
@@ -59,7 +65,7 @@
   position: relative;
   color: #fff;
   text-decoration: none;
-  font-family: "Roboto-slab", Courier, monospace;
+  font-family: "Roboto", Courier, monospace;
   font-weight: 500;
   font-size: 18px;
   line-height: 48px;
@@ -83,9 +89,10 @@
   cursor: pointer;
   display: inline-block;
   text-align: center;
-  font-family: "Roboto-slab", Courier, monospace;
+  font-family: "Roboto", Courier, monospace;
   font-weight: 500;
   font-size: 18px;
+  line-height: 24px;
   border-radius: 100px;
   width: 176px;
   height: 48px;
@@ -146,7 +153,6 @@
   .header__subtitle--mobile-break {
     display: block;
     text-align: left;
-    margin-left: 135px;
   }
 
   .header__container {
@@ -295,7 +301,7 @@
   .header__subtitle {
     text-align: center;
     margin-top: 0;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 28px;
     text-align: left;
   }
@@ -318,22 +324,5 @@
     font-size: 30px;
     line-height: 40px;
     padding-left: 0;
-  }
-}
-
-@media (min-width: 1920px) {
-  .header__container {
-    padding: 20px 120px;
-    max-width: 1920px;
-  }
-
-  .header__nav-link {
-    font-size: 22px;
-    line-height: 56px;
-  }
-  .header__nav-button {
-    font-size: 22px;
-    width: 200px;
-    height: 56px;
   }
 }

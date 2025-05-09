@@ -11,7 +11,6 @@ function LoginModal({ isOpen, onClose, onSubmit, onSignUpClick }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (email && password) {
       onSubmit({ email, password });
     }
@@ -24,8 +23,8 @@ function LoginModal({ isOpen, onClose, onSubmit, onSignUpClick }) {
       title="Sign In"
       onSubmit={handleSubmit}
     >
-      <div className="login-modal__container">
-        <form className="login-modal__form" onSubmit={handleSubmit}>
+      <>
+        <div className="login-modal__container">
           <div className="login-modal__field">
             <label className="login-modal__label" htmlFor="email">
               Email
@@ -54,29 +53,29 @@ function LoginModal({ isOpen, onClose, onSubmit, onSignUpClick }) {
               onChange={handlePasswordChange}
             />
           </div>
+        </div>
 
-          <div className="login-modal__button-container">
-            <button
-              type="submit"
-              className="login-modal__button"
-              disabled={!email || !password}
-            >
-              Sign in
-            </button>
-          </div>
+        <div className="login-modal__button-container">
+          <button
+            type="submit"
+            className="login-modal__button"
+            disabled={!email || !password}
+          >
+            Sign in
+          </button>
+        </div>
 
-          <div className="login-modal__or-signup-group">
-            <span className="login-modal__orspan">or</span>
-            <button
-              type="button"
-              className="login-modal-signup__button"
-              onClick={onSignUpClick}
-            >
-              Sign up
-            </button>
-          </div>
-        </form>
-      </div>
+        <div className="login-modal__or-signup-group">
+          <span className="login-modal__orspan">or</span>
+          <button
+            type="button"
+            className="login-modal-signup__button"
+            onClick={onSignUpClick}
+          >
+            Sign up
+          </button>
+        </div>
+      </>
     </ModalWithForm>
   );
 }

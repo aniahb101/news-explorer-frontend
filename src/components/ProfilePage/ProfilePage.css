@@ -1,16 +1,29 @@
 .profile-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   background-color: #f9f9f9;
   font-family: "Roboto", sans-serif;
+  min-width: 100%;
+}
+
+.profile-page__content {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.profile-page__wrapper {
+  max-width: 100%;
 }
 
 .profile-header {
   background-color: rgba(255, 255, 255, 1);
   color: #000000;
   padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgb(138 138 138 / 65%);
+  max-width: 1440px;
+  margin: auto;
+  padding-left: 40px;
 }
 
 .profile-header__container {
@@ -25,12 +38,14 @@
   color: black;
   font-family: "Roboto-slab", Courier, monospace;
   font-weight: 700;
+  margin-left: 60px;
 }
 
 .profile-header__nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 64px;
   align-items: center;
+  margin-right: 60px;
 }
 
 .profile-header__link {
@@ -38,7 +53,7 @@
   text-decoration: none;
   font-family: "Roboto", Courier, monospace;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .profile-header__link:hover {
@@ -63,7 +78,7 @@
   color: #000000;
   font-family: "Roboto", Courier, monospace;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .profile-header__saved {
@@ -73,12 +88,12 @@
 .profile-header__saved::after {
   content: "";
   display: block;
-  width: 100%;
+  width: 140%;
   height: 2px;
   background-color: rgb(0, 0, 0);
   position: absolute;
-  bottom: -20px;
-  left: 0;
+  bottom: -24px;
+  left: -20%;
 }
 
 .profile-header__logout-icon {
@@ -92,16 +107,25 @@
   color: #0056b3;
 }
 
+.profile-main__info-wrapper {
+  background-color: white;
+  padding-top: 24px;
+  padding-bottom: 40px;
+  max-width: 1440px;
+  margin: auto;
+  padding-left: 70px;
+}
+
 .profile-main {
-  padding: 2rem;
   flex-grow: 1;
 }
 
 .profile-main__title {
   font-family: "Roboto", Courier, monospace;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   color: rgba(26, 27, 34, 0.5);
+  margin-left: 60px;
 }
 
 .profile-main__empty-message {
@@ -113,12 +137,13 @@
 .profile-main__summary {
   margin-top: 20px;
   padding: 10px 0;
+  margin-left: 60px;
 }
 
 .profile-main__saved-count {
   font-family: "Roboto-slab", Courier, monospace;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 40px;
   color: #333;
   margin-top: 0;
 }
@@ -143,9 +168,6 @@
 }
 
 @media (max-width: 1024px) {
-  .profile-main__saved-count {
-    width: 40%;
-  }
   .profile-header {
     padding: 1rem;
   }
@@ -153,14 +175,6 @@
   .profile-header__close-button {
     background: none;
     border: none;
-  }
-
-  .profile-header__nav {
-    gap: 1rem;
-  }
-
-  .profile-header__link {
-    font-size: 14px;
   }
 }
 
@@ -170,10 +184,38 @@
 }
 
 @media (max-width: 768px) {
-  .profile-header {
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
+  .profile-header__link {
+    font-size: 16px;
   }
+
+  .profile-header__name {
+    font-size: 16px;
+  }
+
+  .profile-header__nav {
+    gap: 30px;
+    margin-right: 20px;
+  }
+
+  .profile-header__logo {
+    margin-left: 20px;
+  }
+
+  .profile-main__summary {
+    margin-left: 0;
+  }
+  .profile-main__title {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .profile-main__saved-count {
+    font-size: 30px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
   .profile-header__menu-icon {
     display: block;
     font-size: 24px;
@@ -181,10 +223,12 @@
     background: none;
     border: none;
     outline: none;
+    margin-right: 16px;
+    width: 16px;
   }
 
-  .profile-header__link::after {
-    content: none;
+  .profile-header__saved::after {
+    display: none;
   }
 
   .profile-header__nav {
@@ -199,6 +243,7 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 200px;
     padding: 10px;
+    z-index: 100;
   }
 
   .profile-header__nav--open {
@@ -215,70 +260,92 @@
     margin-bottom: 10px;
   }
 
-  .profile-header__container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .profile-header__nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    padding: 10px;
-  }
-
-  .profile-header__nav--open {
-    display: flex;
-  }
-
   .profile-header__link {
     font-size: 16px;
     padding: 10px;
     display: block;
   }
 
-  .profile-header__menu-icon {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
+  .profile-header__logo {
+    font-size: 16px;
+    margin-left: 16px;
   }
-}
 
-@media (max-width: 470px) {
-  .profile-main {
-    padding: 0;
+  .profile-header__nav {
+    margin-right: 16px;
+    gap: 16px;
+  }
+
+  .profile-main__title,
+  .profile-main__summary {
+    margin-left: 16px;
+  }
+  .profile-main__saved-count {
+    font-size: 30px;
+    width: auto;
+  }
+  .profile-main__keywords {
+    font-size: 13px;
+  }
+
+  .profile-main__info-wrapper {
+    padding-left: 16px;
+    padding-bottom: 10px;
   }
 
   .profile-main__keywords {
-    width: 80%;
+    font-size: 18px;
+    padding-top: 40px;
   }
+}
 
-  .profile-main__summary {
-    padding-left: 20px;
-  }
+@media (min-width: 480px) and (max-width: 500px) {
   .profile-header__logo {
     font-size: 16px;
+    margin-left: 16px;
   }
 
-  .profile-header__user {
-    padding: 5px 10px;
+  .profile-header__nav {
+    gap: 16px;
+    margin-right: 16px;
+  }
+
+  .profile-header__link {
     font-size: 14px;
   }
 
-  .profile-main__saved-count {
-    width: 90%;
+  .profile-header__user {
+    padding: 4px 10px;
+    font-size: 14px;
+    gap: 6px;
   }
-  .profile-main__title {
-    margin-left: 20px;
+
+  .profile-header__name {
+    font-size: 14px;
+  }
+
+  .profile-main__title,
+  .profile-main__summary {
+    margin-left: 16px;
+  }
+
+  .profile-main__saved-count {
+    font-size: 28px;
+  }
+
+  .profile-main__keywords {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile-header__nav {
+    margin-right: 12px;
+    gap: 12px;
+  }
+
+  .profile-main__title,
+  .profile-main__summary {
+    margin-left: 12px;
   }
 }

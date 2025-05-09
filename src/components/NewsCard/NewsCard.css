@@ -75,6 +75,7 @@
 }
 .news-card__content {
   margin: 1.25rem 1.5rem 1.5rem 1.5rem;
+  text-align: left;
 }
 
 .news-card__source {
@@ -109,6 +110,8 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease;
+  font-family: "Roboto", Courier, monospace;
+  font-size: 12px;
 }
 
 .news-card__bookmark:hover + .news-card__tooltip {

@@ -68,7 +68,7 @@
   font-family: "Roboto", Courier, monospace;
   font-weight: 500;
   font-size: 18px;
-  line-height: 48px;
+  line-height: 24px;
 }
 
 .header__nav-link::after {

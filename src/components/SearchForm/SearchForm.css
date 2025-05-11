@@ -18,6 +18,10 @@
   z-index: 1;
   position: relative;
   box-sizing: border-box;
+  font-family: "Roboto", Courier, monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .search-form__input::placeholder {

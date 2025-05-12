@@ -27,7 +27,7 @@
 .news-card-list__button {
   margin-top: 2rem;
   padding: 0.75rem 1.5rem;
-  font-size: 16px;
+  font-size: 18px;
   color: #000000;
   background-color: rgba(232, 232, 232, 1);
   border: none;
@@ -37,6 +37,9 @@
   width: 288px;
   height: 64px;
   border-radius: 80px;
+  font-family: "Roboto", Courier, monospace;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .news-card-list__button:hover {
@@ -50,7 +53,7 @@
   }
 
   .news-card-list-container {
-    padding-top: 0;
+    padding-top: 20px;
   }
 
   .news-card-list__header {
@@ -137,6 +140,13 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    padding: 13px;
+  }
+
+  .news-card-list__header {
+    padding: 10px;
+    padding-bottom: 40px;
+    padding-top: 0;
   }
 
   .news-card-list > * {
